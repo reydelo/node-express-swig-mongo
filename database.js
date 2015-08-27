@@ -5,4 +5,4 @@ var Superhero = new Schema({name : String});
 
 mongoose.model('superheros', Superhero);
 
-mongoose.connect('mongod://localhost/node-superhero');
+mongoose.connect('mongodb://localhost/node-superhero');

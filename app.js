@@ -6,14 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
 
+//mongoose config
+require('./database');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/api');
 
 var app = express();
-
-//mongoose config
-require('./database');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
