@@ -46,4 +46,12 @@ router.put('/superhero/:id', function(req, res) {
   });
 });
 
+router.delete('/superhero/:id', function(req, res) {
+  var query = {"_id": req.params.id};
+  Superhero.findOneAndRemove(query, function(err, superhero) {
+    console.log(superhero);
+    res.redirect('/api/superheros');
+  })
+});
+
 module.exports = router;
