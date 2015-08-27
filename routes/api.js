@@ -22,4 +22,15 @@ router.post('/superheros', function(req, res) {
   });
 });
 
+router.get('/superhero/:id', function(req, res) {
+  var query = {"_id": req.params.id};
+  Superhero.findOne(query, function(err, superhero) {
+    console.log(superhero)
+    res.render(
+      'superhero',
+      {title : 'Superhero API - ' + superhero.name, superhero : superhero}
+    );
+  });
+});
+
 module.exports = router;
