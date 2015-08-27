@@ -33,4 +33,17 @@ router.get('/superhero/:id', function(req, res) {
   });
 });
 
+router.put('/superhero/:id', function(req, res) {
+  var query = {"_id": req.params.id};
+  var update = {name : req.body.name};
+  var options = {new : true};
+  Superhero.findOneAndUpdate(query, update, options, function(err, superhero){
+    console.log(superhero);
+    res.render(
+      'superhero',
+      {title : 'Superhero API - ' + superhero.name, superhero : superhero}
+    );
+  });
+});
+
 module.exports = router;
