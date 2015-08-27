@@ -12,6 +12,9 @@ var api = require('./routes/api');
 
 var app = express();
 
+//mongoose config
+require('./database');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', swig.renderFile);

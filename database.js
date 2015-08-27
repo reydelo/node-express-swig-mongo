@@ -1,0 +1,8 @@
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var Superhero = new Schema({name : String});
+
+mongoose.model('superheros', Superhero);
+
+mongoose.connect('mongod://localhost/node-superhero');
